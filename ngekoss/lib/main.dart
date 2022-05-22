@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ngekoss/pages/login_page.dart';
 import 'package:ngekoss/pages/splash_page.dart';
 
 void main() => runApp(MyApp());
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => SplashPage(),
+        '/login': (context) => LoginPage(),
       },
     );
   }

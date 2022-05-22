@@ -63,7 +63,10 @@ class SplashPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(17),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, '/login', (route) => false);
+                      },
                       child: Text(
                         'Cari Sekarang',
                         style: GoogleFonts.poppins(
