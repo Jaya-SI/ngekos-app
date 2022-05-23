@@ -170,6 +170,21 @@ class LoginPage extends StatelessWidget {
       );
     }
 
+    registerBtn() {
+      return Container(
+        child: TextButton(
+          onPressed: () {},
+          child: Text(
+            'Daftar Sekarang',
+            style: GoogleFonts.poppins(
+              fontWeight: light,
+              color: subText,
+            ),
+          ),
+        ),
+      );
+    }
+
     return Scaffold(
       body: SafeArea(
         child: ListView(
@@ -191,6 +206,10 @@ class LoginPage extends StatelessWidget {
               height: 40,
             ),
             btnLogin(),
+            SizedBox(
+              height: 20,
+            ),
+            registerBtn(),
           ],
         ),
       ),
