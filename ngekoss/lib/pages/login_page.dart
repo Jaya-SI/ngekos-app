@@ -173,7 +173,9 @@ class LoginPage extends StatelessWidget {
     registerBtn() {
       return Container(
         child: TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/register');
+          },
           child: Text(
             'Daftar Sekarang',
             style: GoogleFonts.poppins(
