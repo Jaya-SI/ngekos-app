@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ngekos/model/city_model.dart';
+import 'package:ngekos/model/kost_model.dart';
 import 'package:ngekos/model/user_model.dart';
 import 'package:ngekos/provider/auth_provider.dart';
 import 'package:ngekos/provider/user_provider.dart';
 import 'package:ngekos/theme.dart';
+import 'package:ngekos/widgets/city_card.dart';
+import 'package:ngekos/widgets/kost_card.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
@@ -81,7 +85,7 @@ class HomePage extends StatelessWidget {
                   image: AssetImage('assets/images/image_profile.png'),
                 ),
               ),
-            )
+            ),
           ],
         ),
       );
@@ -89,7 +93,7 @@ class HomePage extends StatelessWidget {
 
     kotaPopuler() {
       return Container(
-        margin: EdgeInsets.only(top: 30, left: 30),
+        margin: EdgeInsets.all(30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -100,6 +104,67 @@ class HomePage extends StatelessWidget {
                 fontWeight: semibold,
               ),
             ),
+            SizedBox(
+              height: 15,
+            ),
+            Container(
+              height: 245,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  CityCard(
+                    City(
+                      id: 1,
+                      name: 'Banjarmasin',
+                      imageUrl: 'assets/images/kota1.png',
+                    ),
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  CityCard(
+                    City(
+                      id: 2,
+                      name: 'Banjarbaru',
+                      imageUrl: 'assets/images/kota2.png',
+                    ),
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  CityCard(
+                    City(
+                      id: 3,
+                      name: 'Batola',
+                      imageUrl: 'assets/images/kota3.png',
+                    ),
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
+      );
+    }
+
+    rekomendasiKost() {
+      return Container(
+        margin: EdgeInsets.symmetric(horizontal: 30),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Rekomendasi Kost',
+              style: GoogleFonts.poppins(
+                fontSize: 16,
+              ),
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            KostCard(Kost()),
+            KostCard(Kost()),
+            KostCard(Kost()),
           ],
         ),
       );
@@ -111,6 +176,7 @@ class HomePage extends StatelessWidget {
           children: [
             header(),
             kotaPopuler(),
+            rekomendasiKost(),
           ],
         ),
       );
